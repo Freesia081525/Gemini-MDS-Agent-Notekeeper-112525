@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Floral Agentic Workflow</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: 'var(--color-primary)',
+              secondary: 'var(--color-secondary)',
+              surface: 'var(--color-surface)',
+            }
+          }
+        }
+      }
+      // Initialize PDF.js worker
+      if (window.pdfjsLib) {
+        window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+      }
+    </script>
+    <style>
+      /* Smooth scrolling and custom scrollbar */
+      body {
+        transition: background-color 0.3s, color 0.3s;
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--color-primary);
+        border-radius: 4px;
+        opacity: 0.5;
+      }
+      .wheel-container {
+        transition: transform 4s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+      }
+      /* Markdown Styles */
+      .prose h1 { font-size: 1.5em; font-weight: bold; margin-top: 0.5em; margin-bottom: 0.5em; }
+      .prose h2 { font-size: 1.25em; font-weight: bold; margin-top: 0.5em; margin-bottom: 0.5em; }
+      .prose ul { list-style-type: disc; padding-left: 1.5em; }
+      .prose ol { list-style-type: decimal; padding-left: 1.5em; }
+      .prose blockquote { border-left: 4px solid var(--color-primary); padding-left: 1em; color: gray; }
+      .prose code { background-color: rgba(0,0,0,0.1); padding: 0.2em 0.4em; border-radius: 4px; }
+      .dark .prose code { background-color: rgba(255,255,255,0.1); }
+      .prose pre { background-color: #1e293b; color: white; padding: 1em; border-radius: 0.5em; overflow-x: auto; }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "openai": "https://aistudiocdn.com/openai@^6.9.1",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/client": "https://aistudiocdn.com/react-dom@^19.2.0/client",
+    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "recharts": "https://aistudiocdn.com/recharts@^3.5.0",
+    "react-markdown": "https://esm.sh/react-markdown@9?bundle",
+    "remark-gfm": "https://esm.sh/remark-gfm@4?bundle",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
